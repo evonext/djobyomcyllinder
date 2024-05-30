@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор объёма цилиндра</title>
+    <style>
+        td {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<h2>Вычисление объёма цилиндра</h2>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Радиус основания (см) -></td>
+            <td><input type="number" name="base_radius" value="{{base_radius}}"></td>
+        </tr>
+        <tr>
+            <td>Высота цилиндра (см) -></td>
+            <td><input type="number" name="cylinder_height" value="{{cylinder_height}}"></td>
+        </tr>
+        <tr>
+            <td>Объём цилиндра (куб.см) -></td>
+            <td><input type="number" name="cylinder_volume" value="{{cylinder_volume}}" readonly></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="button" value="Вычислить">
+                <input type="submit" name="button" value="Очистить">
+            </td>
+        </tr>
+    </table>
+</form>
+<a href="/">На главную страницу</a>
+</body>
+</html>
